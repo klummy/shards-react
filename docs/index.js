@@ -23,7 +23,7 @@ const pages = [
 ReactDOM.render(
   <div>
     <GithubCorner
-      href="https://github.com/survivejs/react-component-boilerplate"
+      href="https://github.com/klummy/shards-react"
       bannerColor="#fff"
       octoColor="#000"
       width={80}
@@ -38,7 +38,7 @@ ReactDOM.render(
         js: props => <CodeSpecimen {...props} lang="javascript" />,
         jsx: props => <ReactSpecimen {...props} />
       }}
-      title="Boilerplate"
+      title="Components"
     />
   </div>,
   document.getElementById('catalog')
