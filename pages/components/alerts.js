@@ -34,9 +34,18 @@ const Alerts = () => (
         }
 
         <h3>Dismissible Alerts</h3>
-        <Alert modifier="danger" dismissible>
-          dismissible
-        </Alert>
+        {
+          appModifiers.map(modifier => (
+            <Alert
+              dismissible
+              key={appModifiers.indexOf(modifier)}
+              modifier={modifier}
+            >
+              Dismissible - {modifier}
+            </Alert>
+
+          ))
+        }
       </div>
 
     </div>
