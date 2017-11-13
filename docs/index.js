@@ -16,6 +16,27 @@ const pages = [
     path: '/',
     title: 'Introduction',
     content: pageLoader(() => import('../README.md'))
+  },
+  {
+    path: '/setup',
+    title: 'Setup',
+    content: pageLoader(() => import('../pages/setup'))
+  },
+  {
+    path: '/components',
+    title: 'Components',
+    pages: [
+      {
+        path: '/components/usage',
+        title: 'Usage',
+        content: pageLoader(() => import('../pages/components/usage'))
+      },
+      {
+        path: '/components/alerts',
+        title: 'Alerts',
+        content: pageLoader(() => import('../pages/components/alerts'))
+      }
+    ]
   }
 ];
 
