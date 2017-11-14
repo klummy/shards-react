@@ -19,6 +19,7 @@ const Buttons = () => (
   modifier="string|optional"
   outline="boolean|optional"
   pill="boolean|optional"
+  squared="boolean|optional"
 >
   Text
 </Button>
