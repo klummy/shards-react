@@ -1,17 +1,7 @@
 import React from 'react';
+import { appModifiers } from '../utils';
 
 import Alert from '../../src/components/alerts';
-
-const appModifiers = [
-  'primary',
-  'secondary',
-  'success',
-  'danger',
-  'warning',
-  'info',
-  'light',
-  'dark'
-];
 
 const Alerts = () => (
   <div className="container">

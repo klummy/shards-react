@@ -35,6 +35,11 @@ const pages = [
         path: '/components/alerts',
         title: 'Alerts',
         content: pageLoader(() => import('../pages/components/alerts'))
+      },
+      {
+        path: '/components/badges',
+        title: 'Badges',
+        content: pageLoader(() => import('../pages/components/badges'))
       }
     ]
   }
