@@ -1,6 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
+import { omit } from '../utils';
+
 class Alert extends React.Component {
   constructor(props) {
     super(props);
@@ -23,13 +25,14 @@ class Alert extends React.Component {
     } = this.props;
 
     const { hideAlert, showDismissible } = this.state;
+    const otherProps = omit(this.props, ['dismissible', 'modifier']);
 
     if (hideAlert) {
       return null;
     }
 
     return (
-      <div className={`alert alert-${modifier} ${showDismissible && 'alert-dismissible fade show'}`} role="alert">
+      <div className={`alert alert-${modifier} ${showDismissible && 'alert-dismissible fade show'}`} role="alert" {...otherProps}>
         {children}
 
         {
