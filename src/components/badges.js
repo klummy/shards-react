@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import classnames from 'classnames';
 
 import { omit } from '../../src/utils';
 
@@ -18,11 +19,16 @@ const Badges = (props) => {
   ];
   const otherProps = omit(props, omittedProperties);
 
-  const classes = `badge badge-${outline ? 'outline-' : ''}${modifier} ${pill ? 'badge-pill' : ''}`;
-
   return (
-    // TODO: Move classes into a variable initialized before the component
-    <span className={classes} {...otherProps}>
+    <span
+      className={classnames({
+        badge: true,
+        [`badge-${modifier}`]: !!modifier,
+        [`badge-outline-${modifier}`]: !!modifier && outline,
+        'badge-pill': pill
+      })}
+      {...otherProps}
+    >
       {children}
     </span>
   );

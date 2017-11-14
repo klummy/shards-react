@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import classnames from 'classnames';
 
 import { omit } from '../utils';
 
@@ -7,7 +8,6 @@ class Alert extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      showDismissible: props.dismissible,
       hideAlert: false
     };
   }
@@ -21,10 +21,11 @@ class Alert extends React.Component {
   render() {
     const {
       children,
+      dismissible,
       modifier
     } = this.props;
 
-    const { hideAlert, showDismissible } = this.state;
+    const { hideAlert } = this.state;
     const otherProps = omit(this.props, ['dismissible', 'modifier']);
 
     if (hideAlert) {
@@ -32,11 +33,19 @@ class Alert extends React.Component {
     }
 
     return (
-      <div className={`alert alert-${modifier} ${showDismissible && 'alert-dismissible fade show'}`} role="alert" {...otherProps}>
+      <div
+        className={classnames({
+          alert: true,
+          [`alert-${modifier}`]: !!modifier,
+          'alert-dismissible': dismissible
+        })}
+        role="alert"
+        {...otherProps}
+      >
         {children}
 
         {
-          showDismissible &&
+          dismissible &&
           <button type="button" className="close" onClick={() => this.dismissAlert()} aria-label="Close">
             <span aria-hidden="true">&times;</span>
           </button>
