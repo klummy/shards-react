@@ -40,6 +40,11 @@ const pages = [
         path: '/components/badges',
         title: 'Badges',
         content: pageLoader(() => import('../pages/components/badges'))
+      },
+      {
+        path: '/components/buttons',
+        title: 'Buttons',
+        content: pageLoader(() => import('../pages/components/buttons'))
       }
     ]
   }
