@@ -1,4 +1,4 @@
-docs/build/
+# docs/build/
 dist-es6/
 dist-modules/
 node_modules/
