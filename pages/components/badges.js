@@ -1,19 +1,42 @@
 import React from 'react';
-import { appModifiers } from '../utils';
+import { CodeSpecimen, Page } from 'catalog';
 
-import Badges from '../../src/components/badges';
+import { appModifiers } from '../utils';
+import Badge from '../../src/components/badges';
 
 const Alerts = () => (
-  <div className="container">
-    <div className="row">
+  <Page>
 
-      <div className="col">
+    <div className="container">
+      <div className="row">
 
-        <h3>Variations</h3>
+        <div className="col-sm-12">
+          <h3>Usage</h3>
+          <CodeSpecimen lang="jsx" dark>
+            {
+              `
+<Badge
+  modifier="string|optional"
+  outline="boolean|optional"
+  pill="boolean|optional"
+>
+  Text
+</Badge>
 
-        {
+See usage section for list of modifier texts
+`
+            }
+          </CodeSpecimen>
+        </div>
+
+
+        <div className="col-sm-12">
+
+          <h3>Variations</h3>
+
+          {
           appModifiers.map(modifier => (
-            <Badges
+            <Badge
               modifier={modifier}
               key={appModifiers.indexOf(modifier)}
               style={{
@@ -21,15 +44,15 @@ const Alerts = () => (
               }}
             >
               Modifier - {modifier}
-            </Badges>
+            </Badge>
 
           ))
         }
 
-        <h3>Outline</h3>
-        {
+          <h3>Outline</h3>
+          {
           appModifiers.map(modifier => (
-            <Badges
+            <Badge
               modifier={modifier}
               key={appModifiers.indexOf(modifier)}
               outline
@@ -39,15 +62,15 @@ const Alerts = () => (
               }}
             >
               Dismissible - {modifier}
-            </Badges>
+            </Badge>
 
           ))
         }
 
-        <h3>Pill</h3>
-        {
+          <h3>Pill</h3>
+          {
           appModifiers.map(modifier => (
-            <Badges
+            <Badge
               modifier={modifier}
               key={appModifiers.indexOf(modifier)}
               pill
@@ -56,15 +79,16 @@ const Alerts = () => (
                 marginRight: '5px'
               }}
             >
-              Dismissible - {modifier}
-            </Badges>
+              Pill - {modifier}
+            </Badge>
 
           ))
         }
-      </div>
+        </div>
 
+      </div>
     </div>
-  </div>
+  </Page>
 );
 
 export default Alerts;

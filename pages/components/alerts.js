@@ -1,17 +1,38 @@
 import React from 'react';
+import { CodeSpecimen, Page } from 'catalog';
+
 import { appModifiers } from '../utils';
 
 import Alert from '../../src/components/alerts';
 
 const Alerts = () => (
-  <div className="container">
-    <div className="row">
+  <Page>
 
-      <div className="col">
+    <div className="container">
+      <div className="row">
 
-        <h3>Alert States</h3>
+        <div className="col-sm-12">
+          <h3>Usage</h3>
+          <CodeSpecimen lang="jsx" dark>
+            {
+            `
+<Alert
+  modifier="string|required"
+  dismissible="boolean|optional"
+>
+  Text
+</Alert>
 
-        {
+See usage section for list of modifier texts
+`
+          }
+          </CodeSpecimen>
+        </div>
+
+        <div className="col-sm-12">
+
+          <h3>Variations</h3>
+          {
           appModifiers.map(modifier => (
             <Alert
               key={appModifiers.indexOf(modifier)}
@@ -23,8 +44,8 @@ const Alerts = () => (
           ))
         }
 
-        <h3>Dismissible Alerts</h3>
-        {
+          <h3>Dismissible Alerts</h3>
+          {
           appModifiers.map(modifier => (
             <Alert
               dismissible
@@ -36,10 +57,11 @@ const Alerts = () => (
 
           ))
         }
-      </div>
+        </div>
 
+      </div>
     </div>
-  </div>
+  </Page>
 );
 
 export default Alerts;
