@@ -45,6 +45,11 @@ const pages = [
         path: '/components/buttons',
         title: 'Buttons',
         content: pageLoader(() => import('../pages/components/buttons'))
+      },
+      {
+        path: '/components/datepicker',
+        title: 'Datepicker',
+        content: pageLoader(() => import('../pages/components/datepicker'))
       }
     ]
   }
