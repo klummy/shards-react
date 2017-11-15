@@ -22,6 +22,7 @@ module.exports = {
     "react/sort-comp": 0,
     "react/no-multi-comp": 0,
     "react/require-extension": 0,
-    "import/prefer-default-export": 0
+    "import/prefer-default-export": 0,
+    "class-methods-use-this": 0
   }
 };
