@@ -2,6 +2,8 @@
 
 # Shards-React
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/klummy/shards-react.svg)](https://greenkeeper.io/)
+
 React components for [Shards-UI](https://github.com/DesignRevision/shards-ui)
 
 ## Roadmap
